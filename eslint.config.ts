@@ -32,7 +32,7 @@ const tsFiles = {
 };
 
 const configFiles = {
-  files: ["**/*.config.ts", "**/*.config.js", "**/*.config.mjs"],
+  files: ["**/*.config.ts"],
   ignores: ["**/coverage/**"],
   languageOptions: {
     parser: typescriptParser,
