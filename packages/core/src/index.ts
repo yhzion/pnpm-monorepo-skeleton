@@ -1,3 +1,3 @@
-export function helloCore() {
-  return "Hello from Core!";
+export function hello(message: string) {
+  return `Hello ${message}!`;
 }

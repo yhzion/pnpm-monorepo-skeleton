@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
-import { helloCore } from "../index";
+import { hello } from "../index";
 
-describe("helloCore", () => {
-  it('should return "Hello from Core!"', () => {
-    expect(helloCore()).toBe("Hello from Core!");
+describe("hello", () => {
+  it('should return "Hello World!"', () => {
+    expect(hello("World")).toBe("Hello World!");
   });
 });

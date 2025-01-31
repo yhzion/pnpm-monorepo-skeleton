@@ -4,9 +4,10 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "dev": "vite",
+    "build": "vite build",
     "test": "vitest run",
-    "lint": "eslint .",
+    "lint": "eslint --fix",
     "format": "prettier --write .",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage"
@@ -14,5 +15,8 @@
   "dependencies": {
     "@mmlp/core": "workspace:*"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@types/node": "^22.12.0"
+  }
 }
