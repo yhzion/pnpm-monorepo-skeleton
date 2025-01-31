@@ -1,3 +1,3 @@
 export function helloCore() {
-    return "Hello from Core!";
-  }
+  return "Hello from Core!";
+}

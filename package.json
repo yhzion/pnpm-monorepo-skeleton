@@ -8,20 +8,30 @@
   "scripts": {
     "build": "pnpm -r run build",
     "clean": "find . -type d \\( -name 'node_modules' -o -name 'dist' \\) -prune -exec rm -rf {} + && rm -f pnpm-lock.yaml && pnpm install",
-    "lint": "pnpm exec eslint . --ext .ts,.tsx,.js,.jsx",
-    "format": "pnpm exec prettier --write .",
+    "lint": "pnpm -r lint .",
+    "format": "pnpm -r format",
     "dev": "pnpm -r run dev",
     "test": "vitest run",
     "test:watch": "vitest --watch",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "health": "pnpm clean && pnpm build && pnpm test && pnpm lint && pnpm format",
+    "prepare": "mkdir -p .husky && chmod +x .husky/pre-commit"
   },
+  "lint-staged": {
+  "**/*.{js,ts,tsx,vue,test.ts}": [
+    "eslint --fix",
+    "prettier --write"
+  ]
+},
   "devDependencies": {
-    "vitest": "^3.0.4",
+    "@eslint/js": "^9.19.0",
     "@vitest/coverage-istanbul": "^3.0.4",
     "eslint": "^9.19.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "prettier": "^3.4.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
-    "jsdom": "^26.0.0"
+    "vitest": "^3.0.4"
   }
 }
